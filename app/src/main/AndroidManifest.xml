@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.KotlinCourse"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".services.ServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DemoDataBinding"
+            android:exported="false"
+            android:label="@string/title_activity_demo_data_binding"
+            android:theme="@style/Theme.KotlinCourse" />
+        <activity
+            android:name=".HomeScreenActivity"
+            android:exported="false" />
+        <!-- .dialogbox.DialogBoxActivity -->
+        <!-- .room.RoomActivity -->
+        <!-- .coroutines.CoroutinesMainActivity -->
+        <!-- .retrofit.RetrofitActivity-->
+        <activity
+            android:name=".dialogbox.DialogBoxActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
