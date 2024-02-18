@@ -56,7 +56,7 @@
         </receiver>
 
         <activity
-            android:name=".workmanager.WorkManagerActivity"
+            android:name=".coroutines.CoroutinesMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

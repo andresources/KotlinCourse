@@ -16,7 +16,6 @@ class ViewBindDemo : AppCompatActivity() {
 
         binding.btnSubmit.setOnClickListener {
             var str = binding.etUserName.text
-
         }
     }
 }
