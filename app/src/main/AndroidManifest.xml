@@ -56,7 +56,7 @@
         </receiver>
 
         <activity
-            android:name=".camera.CameraActivity"
+            android:name=".workmanager.WorkManagerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
