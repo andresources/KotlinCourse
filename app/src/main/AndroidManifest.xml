@@ -56,7 +56,7 @@
         </receiver>
 
         <activity
-            android:name=".coroutines.CoroutinesMainActivity"
+            android:name=".retrofit.RetrofitActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
