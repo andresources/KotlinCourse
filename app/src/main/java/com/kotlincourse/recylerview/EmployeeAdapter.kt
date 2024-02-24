@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.kotlincourse.R
 
+
+
 class EmployeeAdapter(val emp: List<Emp>) : RecyclerView.Adapter<EmployeeAdapter.EmpViewHolder>() {
     class EmpViewHolder(val view: View) : ViewHolder(view){
         val tvEmpName: TextView = view.findViewById(R.id.tvEmpName)

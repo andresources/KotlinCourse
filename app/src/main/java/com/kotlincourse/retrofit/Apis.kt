@@ -11,5 +11,8 @@ interface Apis {
     @GET("AffectoscanningProject/login.php")
     suspend fun loginUser(@Query("email") email: String ,@Query("pass") pass: String) : LoginResponse
 
+    @GET("AffectoscanningProject/getAllergies.php")
+    suspend fun getAllergies() : List<Allergies>
+
 }
 

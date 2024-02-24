@@ -4,12 +4,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".recylerview.RecyclerViewActivity">
-
+    tools:context=".retrofit.recyclerview.AllergiesListActivity">
+    <Button
+        android:text="Get Allergies"
+        android:onClick="getAllergies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 </LinearLayout>

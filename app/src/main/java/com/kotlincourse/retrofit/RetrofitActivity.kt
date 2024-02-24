@@ -75,6 +75,8 @@ class RetrofitActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 val result = apis.getAllData() //3.calling end point
                 tvData.text = result.toString() //Ui update
+
+                //rv.adapter = EmployeeAdapter(result)
                 pd.dismiss()
                /* val result = apis.getAllData()
                 if (result != null){
