@@ -4,12 +4,14 @@ import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.kotlincourse.R
+import com.kotlincourse.mvvm.RetrofitClient
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -36,11 +38,12 @@ class RetrofitActivity : AppCompatActivity() {
             pd.setTitle("Please wait, data is being submitted")
             pd.show()
 
-            var retrofit = Retrofit.Builder()
+            /*var retrofit = Retrofit.Builder()
                 .baseUrl("http://mytutorings.in/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .build()
-
+                .build()*/
+            var retrofit = RetrofitClient.getSingleton()
+            Log.i("zzz","login - ${retrofit.hashCode()}")
             var apis = retrofit.create(Apis::class.java)
             lifecycleScope.launch {
                 var loginRes = apis.loginUser(email,pass)
@@ -59,16 +62,20 @@ class RetrofitActivity : AppCompatActivity() {
         }
     }
 
+
+
     @SuppressLint("SuspiciousIndentation")
     fun getData(){
         var pd = ProgressDialog(this)
         pd.setTitle("Please wait, data is being loaded")
         pd.show()
 
-        var retrofit = Retrofit.Builder()
+        /*var retrofit = Retrofit.Builder()
             .baseUrl("http://mytutorings.in/")
             .addConverterFactory(GsonConverterFactory.create())
-            .build() //1.endpoint base url setup
+            .build()*/ //1.endpoint base url setup
+        var retrofit = RetrofitClient.getSingleton()
+        Log.i("zzz","getData - ${retrofit.hashCode()}")
 
         var apis = retrofit.create(Apis::class.java) //2.Defining endpoint
 
