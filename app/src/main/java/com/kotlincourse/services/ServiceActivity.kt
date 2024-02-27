@@ -5,7 +5,9 @@ import android.content.Intent
 import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import com.kotlincourse.LazyLateInitActivity
 import com.kotlincourse.R
 import com.kotlincourse.broadcast.MyBroadcastReceiver
 
@@ -20,7 +22,8 @@ class ServiceActivity : AppCompatActivity() {
         startService(Intent(this,WorkerThread("")::class.java))
     }
     fun stopService(view: View) {
-        stopService((Intent(this,BackgroundService::class.java)))
+        val intent = Intent(this@ServiceActivity,BackgroundService::class.java)
+        stopService(intent)
     }
 
 

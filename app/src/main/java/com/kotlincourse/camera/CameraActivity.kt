@@ -22,6 +22,7 @@ class CameraActivity : AppCompatActivity() {
         setContentView(R.layout.activity_camera)
         if (ContextCompat.checkSelfPermission(applicationContext, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED)
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), cameraRequest)
+
         imageView = findViewById(R.id.imageView)
         photoButton = findViewById(R.id.button)
         photoButton.setOnClickListener {

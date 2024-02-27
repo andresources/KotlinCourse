@@ -21,9 +21,9 @@ class GetResultActivity : AppCompatActivity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {//data = intent.putExtra("ename", "XYZ")
         super.onActivityResult(requestCode, resultCode, data)
-        if(resultCode ==100){
+        if(requestCode ==99){
             var ename = data?.getStringExtra("ename")
             tv.setText(ename)
         }

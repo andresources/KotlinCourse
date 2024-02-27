@@ -6,7 +6,7 @@ import android.util.Log
 
 class WorkerThread(name: String ="MyWorkerService") : IntentService(name) {
     override fun onHandleIntent(p0: Intent?) {
-        for (index in 0..5){
+        for (index in 0..20){
             Thread.sleep(2000L)
             Log.i("zzz","$index")
         }
