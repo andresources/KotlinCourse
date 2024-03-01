@@ -40,19 +40,19 @@ class NotificationsActivity : AppCompatActivity() {
         //Step1:
         mNotificationManager= getSystemService(NOTIFICATION_SERVICE) as NotificationManager
 
-        //Step2: Notification Channel
+        //Step2: Notification Channel - the ability to group the notifications that our application sends into manageable groups
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val importance = NotificationManager.IMPORTANCE_DEFAULT
             val mChannel = NotificationChannel(CHANNEL_ID, CHANNEL_NAME, importance)
             mNotificationManager.createNotificationChannel(mChannel)
         }
 
-        //Step3: Create Pending Intent
+        //Step3: Create Pending Intent - A future intent that other apps can use.(where you need to perform an action at a later time)
         val pendingIntent= PendingIntent.getActivity(this, 420,
             Intent(this, NotificationsActivity::class.java).apply {
                 this.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
             },
-            PendingIntent.FLAG_IMMUTABLE)
+            PendingIntent.FLAG_IMMUTABLE)  //PendingIntent can not be modified after it is created
 
         //Step4: Notification.Builder
         mNotificationBuilder = NotificationCompat.Builder(this, CHANNEL_ID)
