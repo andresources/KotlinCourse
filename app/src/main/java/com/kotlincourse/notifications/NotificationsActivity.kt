@@ -33,11 +33,12 @@ class NotificationsActivity : AppCompatActivity() {
     }
 
     fun showNotification(view: View) {
-        mNotificationManager.notify(22,mNotificationBuilder.build())
+        var notification = mNotificationBuilder.build()
+        mNotificationManager.notify(123,notification)
     }
 
     private fun setupNotifications(){
-        //Step1:
+        //Step1: Define Notification Manager
         mNotificationManager= getSystemService(NOTIFICATION_SERVICE) as NotificationManager
 
         //Step2: Notification Channel - the ability to group the notifications that our application sends into manageable groups
@@ -51,8 +52,7 @@ class NotificationsActivity : AppCompatActivity() {
         val pendingIntent= PendingIntent.getActivity(this, 420,
             Intent(this, NotificationsActivity::class.java).apply {
                 this.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
-            },
-            PendingIntent.FLAG_IMMUTABLE)  //PendingIntent can not be modified after it is created
+            }, PendingIntent.FLAG_IMMUTABLE)  //PendingIntent can not be modified after it is created
 
         //Step4: Notification.Builder
         mNotificationBuilder = NotificationCompat.Builder(this, CHANNEL_ID)

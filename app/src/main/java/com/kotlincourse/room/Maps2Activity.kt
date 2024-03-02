@@ -1,8 +1,7 @@
-package com.kotlincourse.googlemaps
+package com.kotlincourse.room
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -11,21 +10,22 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.kotlincourse.R
-import com.kotlincourse.databinding.ActivityMapsBinding
+import com.kotlincourse.databinding.ActivityMaps2Binding
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class Maps2Activity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
-    private lateinit var binding: ActivityMapsBinding
+    private lateinit var binding: ActivityMaps2Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMapsBinding.inflate(layoutInflater)
+        binding = ActivityMaps2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
 
@@ -42,28 +42,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val hyd = LatLng(17.452938, 78.380981)
-        var mark = MarkerOptions()
-        mark.position(hyd).title("Marker in Hyderabad")
-
-        mMap.addMarker(mark)
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hyd, 10f))
-
-        mMap.setOnMapClickListener({
-
-            var lat = it.latitude
-            var lng = it.longitude
-            Toast.makeText(this@MapsActivity,"Selected Lat: $lat, Lng : $lng",Toast.LENGTH_SHORT).show()
-            mMap.clear()
-
-            var mark = MarkerOptions()
-            mark.position(it)
-            mark.title("Hyderbad Loc")
-
-            mMap.addMarker(mark)
-
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(it, 10f));
-        })
-
+        val sydney = LatLng(-34.0, 151.0)
+        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 }
