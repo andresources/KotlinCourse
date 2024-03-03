@@ -11,10 +11,11 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.kotlincourse.DemoFragmentActivity
 import com.kotlincourse.R
 
 class CameraActivity : AppCompatActivity() {
-    private val cameraRequest = 1888
+    private val cameraRequest = 999
     lateinit var imageView: ImageView
     lateinit var photoButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
