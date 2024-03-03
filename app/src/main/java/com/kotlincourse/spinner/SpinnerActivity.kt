@@ -1,10 +1,11 @@
-package com.kotlincourse
+package com.kotlincourse.spinner
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.Toast
+import com.kotlincourse.R
 
 class SpinnerActivity : AppCompatActivity() {
     lateinit var sp: Spinner

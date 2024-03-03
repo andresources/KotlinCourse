@@ -1,12 +1,12 @@
-package com.kotlincourse
+package com.kotlincourse.livedata
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
+import com.kotlincourse.R
+import com.kotlincourse.StudentViewModel
 
 class LiveDataActivity : AppCompatActivity() {
 

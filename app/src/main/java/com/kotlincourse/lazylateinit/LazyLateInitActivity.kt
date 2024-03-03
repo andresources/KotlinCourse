@@ -1,9 +1,11 @@
-package com.kotlincourse
+package com.kotlincourse.lazylateinit
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import com.kotlincourse.Employee
+import com.kotlincourse.R
 
 class LazyLateInitActivity : AppCompatActivity() {
 

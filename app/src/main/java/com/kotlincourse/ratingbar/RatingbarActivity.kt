@@ -1,10 +1,11 @@
-package com.kotlincourse
+package com.kotlincourse.ratingbar
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.RatingBar
 import android.widget.Toast
+import com.kotlincourse.R
 
 class RatingbarActivity : AppCompatActivity() {
     lateinit var rb: RatingBar

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:layout_height="match_parent"
-    tools:context=".SpinnerActivity">
+    tools:context=".spinner.SpinnerActivity">
 <Spinner
     android:id="@+id/sp"
     android:entries="@array/courses"

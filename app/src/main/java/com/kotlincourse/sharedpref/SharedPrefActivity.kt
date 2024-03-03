@@ -1,10 +1,11 @@
-package com.kotlincourse
+package com.kotlincourse.sharedpref
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.kotlincourse.R
 
 class SharedPrefActivity : AppCompatActivity() {
     lateinit var etName: EditText
