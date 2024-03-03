@@ -11,7 +11,6 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.kotlincourse.DemoFragmentActivity
 import com.kotlincourse.R
 
 class CameraActivity : AppCompatActivity() {

@@ -1,10 +1,13 @@
-package com.kotlincourse
+package com.kotlincourse.fragments
 
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
+import com.kotlincourse.FirstFragment
+import com.kotlincourse.R
+import com.kotlincourse.SecondFragment
 
 class DemoFragmentActivity : AppCompatActivity() {
     private lateinit var firstFragment: Button
