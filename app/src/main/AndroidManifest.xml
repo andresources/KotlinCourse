@@ -5,11 +5,16 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:name=".MyApp"
@@ -21,9 +26,7 @@
         android:theme="@style/Theme.KotlinCourse"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name=".telephonymanager.TelephonyManagerActivity"
-            android:exported="false" />
+
         <activity
             android:name=".activitybundle.SecondActivity"
             android:exported="false" />
@@ -86,7 +89,7 @@
         </receiver>
 
         <activity
-            android:name=".switchbtn.ToggleButtonActivity"
+            android:name=".exoplayer.ExpPlayerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
