@@ -22,9 +22,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".telephonymanager.TelephonyManagerActivity"
+            android:exported="false" />
+        <activity
             android:name=".activitybundle.SecondActivity"
             android:exported="false" />
-
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -84,7 +86,7 @@
         </receiver>
 
         <activity
-            android:name=".activitybundle.FirstActivity"
+            android:name=".switchbtn.ToggleButtonActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
