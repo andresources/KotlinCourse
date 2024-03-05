@@ -38,6 +38,11 @@ class MyHomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_my_home, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //LOgic
+    }
+
     companion object {
         /**
          * Use this factory method to create a new instance of

@@ -19,11 +19,15 @@ class TimePickerActivity : AppCompatActivity() {
         tvTime = findViewById(R.id.tvTime)
         btnTimePicker.setOnClickListener {
             val cal = Calendar.getInstance()
-            val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
-                tvTime.text = "Hour : $hour, Minute : $minute"
-            }
-            TimePickerDialog(this, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), false)
-                .show()
+            var timePickerDialoag =TimePickerDialog(
+                this,
+                { timePicker, hour, minute ->
+                    tvTime.text = "Hour : $hour, Minute : $minute"
+                },
+                cal.get(Calendar.HOUR_OF_DAY),
+                cal.get(Calendar.MINUTE),
+                false)
+            timePickerDialoag.show()
         }
     }
 }

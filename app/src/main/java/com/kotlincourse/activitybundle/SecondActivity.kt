@@ -12,6 +12,8 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
         var bundle = intent.extras
         tvDetails = findViewById(R.id.tvDetails)
-        tvDetails.setText(bundle!!.getString("first_name"))
+        var firstName = bundle!!.getString(FIRST_NAME)
+        var last = bundle!!.getString(LAST_NAME)
+        tvDetails.setText(firstName)
     }
 }

@@ -11,8 +11,8 @@ class WebviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_webview)
         wv = findViewById(R.id.wv)
-        var webSettings = wv.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        wv.loadUrl("https://www.eenadu.net/");
+        var webSettings = wv.getSettings()
+        webSettings.setJavaScriptEnabled(true)
+        wv.loadUrl("https://info.eenadu.net/csr-policy.htm");
     }
 }

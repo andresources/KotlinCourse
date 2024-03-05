@@ -26,7 +26,9 @@
         android:theme="@style/Theme.KotlinCourse"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".textwatcher.EditTextListenersActivity"
+            android:exported="false" />
         <activity
             android:name=".activitybundle.SecondActivity"
             android:exported="false" />
@@ -89,10 +91,11 @@
         </receiver>
 
         <activity
-            android:name=".animations.AnimationActivity"
+            android:name=".webview.WebviewActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

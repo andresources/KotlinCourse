@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.DatePicker
 import android.widget.TextView
 import com.kotlincourse.R
 import java.util.Calendar
@@ -25,14 +26,20 @@ class DatePickerActivity : AppCompatActivity() {
         }
     }
     private fun showDatePicker() {
+        val y= calendar.get(Calendar.YEAR) //2024
+        val m = calendar.get(Calendar.MONTH) //03
+        val d = calendar.get(Calendar.DAY_OF_MONTH) //04
+        //Context context, @Nullable OnDateSetListener listener, int year, int month, int dayOfMonth
+
         // Create a DatePickerDialog
         val datePickerDialog = DatePickerDialog(
-            this, {DatePicker, year: Int, monthOfYear: Int, dayOfMonth: Int ->
+            this,
+            { DatePicker, year: Int, monthOfYear: Int, dayOfMonth: Int ->
                 tvSelectedDate.text = "Selected Date: $dayOfMonth / ${monthOfYear+1} / $year"
             },
-            calendar.get(Calendar.YEAR),
-            calendar.get(Calendar.MONTH),
-            calendar.get(Calendar.DAY_OF_MONTH)
+            y,
+            m,
+            d
         )
         // Show the DatePicker dialog
         datePickerDialog.show()
