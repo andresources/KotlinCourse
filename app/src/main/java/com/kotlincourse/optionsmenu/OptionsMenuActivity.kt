@@ -23,7 +23,7 @@ class OptionsMenuActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
+         when (item.itemId) { //action_share
             R.id.action_settings -> {
                 Toast.makeText(applicationContext, "click on setting", Toast.LENGTH_LONG).show()
                 true
@@ -38,5 +38,6 @@ class OptionsMenuActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+        return true
     }
 }

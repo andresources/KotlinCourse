@@ -1,6 +1,8 @@
 package com.kotlincourse.hilt
 
-class Teacher {
+import javax.inject.Inject
+
+class Teacher @Inject constructor() {
     fun getTeacher() : String{
         return "Teacher name : ABC"
     }

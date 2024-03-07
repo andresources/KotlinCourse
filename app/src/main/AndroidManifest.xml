@@ -26,6 +26,10 @@
         android:theme="@style/Theme.KotlinCourse"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <activity
+            android:name=".hilt.HiltNextActivity"
+            android:exported="false" />
         <activity
             android:name=".textwatcher.EditTextListenersActivity"
             android:exported="false" />
@@ -91,7 +95,7 @@
         </receiver>
 
         <activity
-            android:name=".webview.WebviewActivity"
+            android:name=".hilt.HiltRetrofitActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

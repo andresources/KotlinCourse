@@ -12,9 +12,8 @@
         android:id="@+id/toggleBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ToggleButton"
-        android:textOff="Off"
-        android:textOn="On" />
+        android:textOff="Wifi Off"
+        android:textOn="Wifi On" />
     <Button
         android:id="@+id/btnGetToggleData"
         android:text="Get Toggle Data"

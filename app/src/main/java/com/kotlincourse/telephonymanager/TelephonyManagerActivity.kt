@@ -21,7 +21,7 @@ class TelephonyManagerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_telephony_manager)
         if (ContextCompat.checkSelfPermission(applicationContext, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_DENIED)
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.SEND_SMS,Manifest.permission.CALL_PHONE), smsRequest)
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.SEND_SMS), smsRequest)
 
         if (ContextCompat.checkSelfPermission(applicationContext, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED)
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CALL_PHONE), smsRequest)
@@ -33,11 +33,13 @@ class TelephonyManagerActivity : AppCompatActivity() {
             smsMng.sendTextMessage("+918247599246",null,"Hi Test Message",null,null);
         }
         btnMail.setOnClickListener {
-            var intent = Intent(Intent.ACTION_SEND)
-            intent.putExtra(Intent.EXTRA_EMAIL,"harinathreddy.y1@gmail.com")
-            intent.putExtra(Intent.EXTRA_SUBJECT,"This is subject")
-            intent.putExtra(Intent.EXTRA_TEXT,"This is body")
-            intent.setType("message/rfc822");
+            var intent = Intent(Intent.ACTION_SEND).apply {
+                putExtra(Intent.EXTRA_EMAIL,"harinathreddy.y1@gmail.com")
+                putExtra(Intent.EXTRA_SUBJECT,"This is subject")
+                putExtra(Intent.EXTRA_TEXT,"This is body")
+                setType("message/rfc822");
+            }
+
             startActivity(Intent.createChooser(intent, "Choose an Email client :"));
         }
         btnCall.setOnClickListener {

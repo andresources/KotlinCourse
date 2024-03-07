@@ -10,15 +10,21 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.kotlincourse.R
 import com.kotlincourse.StudentViewModel
+import com.kotlincourse.hilt.Student
 import com.kotlincourse.retrofit.Apis
 import com.kotlincourse.retrofit.RetrofitActivity
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MVVMActivity : AppCompatActivity() {
     //Recyler - server data, MVVM Recy + Retr
     lateinit var tvData: TextView
+    @Inject
+    lateinit var student: Student // var student = Student()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mvvmactivity)
