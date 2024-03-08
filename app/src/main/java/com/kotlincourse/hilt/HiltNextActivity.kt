@@ -9,7 +9,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class HiltNextActivity : AppCompatActivity() {
     @Inject
-    lateinit var student: Student
+    lateinit var student: Student //Field Inject
 
     @Inject
     lateinit var teacher: Teacher

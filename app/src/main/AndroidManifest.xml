@@ -95,7 +95,7 @@
         </receiver>
 
         <activity
-            android:name=".hilt.HiltRetrofitActivity"
+            android:name=".hilt.HiltDemoActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

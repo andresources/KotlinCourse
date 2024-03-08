@@ -6,8 +6,12 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.kotlincourse.R
+import com.kotlincourse.retrofit.Apis
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import retrofit2.Retrofit
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -18,6 +22,9 @@ class HiltDemoActivity : AppCompatActivity() {
     @Inject
     lateinit var teacher: Teacher // Or var teacher = Teacher()
 
+    @Inject
+    lateinit var aps: Apis
+
     lateinit var tv: TextView
     lateinit var tvAddress: TextView
     lateinit var btnGotoNextActivity : Button
@@ -26,6 +33,9 @@ class HiltDemoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hilt_demo)
         student.getName()
+        lifecycleScope.launch {
+            val result = aps.getAllData()
+        }
 
         tv = findViewById(R.id.tv)
         tvAddress = findViewById(R.id.tvAddress)

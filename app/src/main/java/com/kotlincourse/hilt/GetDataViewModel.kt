@@ -17,6 +17,5 @@ class GetDataViewModel @Inject constructor(private val apis: Apis) : ViewModel()
         viewModelScope.launch {
             data.value = apis.getAllData()
         }
-
     }
 }

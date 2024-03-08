@@ -20,16 +20,26 @@ object appModule {
     @Singleton
     fun provideStudent() = Student()
 
+
+
     @Provides
     @Singleton
     fun provideRetrofit() : Apis{
-        var retrofit = Retrofit.Builder()
+
+        var apis = Retrofit.Builder()
             .baseUrl("http://mytutorings.in/")
             .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        var apis = retrofit.create(Apis::class.java)
+            .build().create(Apis::class.java)
+
         return apis
     }
+    @Provides
+    @Singleton
+    fun provideRetrofit1() : Apis = Retrofit.Builder()
+            .baseUrl("http://mytutorings.in/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build().create(Apis::class.java)
+
 }
 
 @Module
