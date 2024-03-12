@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.Log
 import androidx.work.Worker
 import androidx.work.WorkerParameters
-
+//1.Declaration
 class WorkA(appContext: Context, workerParams: WorkerParameters) : Worker(appContext,workerParams) {
     override fun doWork(): Result {
         Log.i("WM","WorkA Started")
@@ -17,3 +17,5 @@ class WorkA(appContext: Context, workerParams: WorkerParameters) : Worker(appCon
         return Result.success()
     }
 }
+
+

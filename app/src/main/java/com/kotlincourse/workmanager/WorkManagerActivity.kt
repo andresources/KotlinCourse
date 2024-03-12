@@ -14,12 +14,11 @@ class WorkManagerActivity : AppCompatActivity() {
     }
 
     fun startWork(view: View) {
-        var work = OneTimeWorkRequest.Builder(WorkA::class.java).build()
+        var workA = OneTimeWorkRequest.Builder(WorkA::class.java).build()//2.Intialization
         var workB = OneTimeWorkRequest.Builder(WorkB::class.java).build()
-        var wm = WorkManager.getInstance(this@WorkManagerActivity)
-        wm.enqueue(work);
-        //wm.beginWith(listOf(work, workB)).enqueue();
-        //wm.beginWith(work).then(workB).enqueue();
-
+        var wm = WorkManager.getInstance(this@WorkManagerActivity)//3. excute work
+        //wm.beginWith(listOf(workA,workB)).enqueue()
+        //wm.enqueue(workA)
+        wm.beginWith(workA).then(workB).enqueue();
     }
 }

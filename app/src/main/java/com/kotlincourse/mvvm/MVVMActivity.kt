@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.kotlincourse.R
 import com.kotlincourse.StudentViewModel
+import com.kotlincourse.hilt.GetDataViewModel
 import com.kotlincourse.hilt.Student
 import com.kotlincourse.retrofit.Apis
 import com.kotlincourse.retrofit.RetrofitActivity
@@ -23,19 +25,16 @@ import javax.inject.Inject
 class MVVMActivity : AppCompatActivity() {
     //Recyler - server data, MVVM Recy + Retr
     lateinit var tvData: TextView
-    @Inject
-    lateinit var student: Student // var student = Student()
+    val alleriesVM: GetAllergiesViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mvvmactivity)
         tvData = findViewById(R.id.tvData)
-        val alleriesVM = ViewModelProvider(this).get(GetAllergiesViewModel::class.java)
         //show
         alleriesVM.myAllergies.observe(this,{
-            tvData.setText(it.toString())
+            tvData.setText("Response : "+it.toString())
             //rv.adapter = AllergiesAdapter(allergyList)
             //dismiss
-
         })
     }
 }

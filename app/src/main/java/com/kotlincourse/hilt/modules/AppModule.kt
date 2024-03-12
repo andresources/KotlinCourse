@@ -2,6 +2,7 @@ package com.kotlincourse.hilt.modules
 
 import com.kotlincourse.hilt.Student
 import com.kotlincourse.hilt.Teacher
+import com.kotlincourse.mvvm.GetAllergiesRepo
 import com.kotlincourse.retrofit.Apis
 import dagger.Module
 import dagger.Provides
@@ -33,12 +34,8 @@ object appModule {
 
         return apis
     }
-    @Provides
-    @Singleton
-    fun provideRetrofit1() : Apis = Retrofit.Builder()
-            .baseUrl("http://mytutorings.in/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build().create(Apis::class.java)
+
+
 
 }
 

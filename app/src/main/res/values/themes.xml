@@ -6,7 +6,6 @@
     </style>
 
 
-
     <style name="Theme.KotlinCourse" parent="Base.Theme.KotlinCourse" />
 
     <style name="mytv" parent="Widget.AppCompat.TextView">

@@ -9,7 +9,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-
+//View -> ViewModel -> Repository -> NetworkLayer or Local DB layer
 @HiltViewModel
 class GetDataViewModel @Inject constructor(private val apis: Apis) : ViewModel(){
     var data: MutableLiveData<List<MyData>> = MutableLiveData()
