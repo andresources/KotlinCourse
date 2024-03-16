@@ -5,12 +5,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 
-class ViewPagerAdapter(supportFragmentManager: FragmentManager) :
+class ViewPagerAdapter(supportFragmentManager: FragmentManager,val mFragmentList:List<Fragment>,val mFragmentTitleList:List<String>) :
     FragmentStatePagerAdapter(supportFragmentManager) {
 
     // declare arrayList to contain fragments and its title
-    private val mFragmentList = ArrayList<Fragment>()
-    private val mFragmentTitleList = ArrayList<String>()
+
 
     override fun getItem(position: Int): Fragment {
         // return a particular fragment page
@@ -27,9 +26,5 @@ class ViewPagerAdapter(supportFragmentManager: FragmentManager) :
         return mFragmentTitleList[position]
     }
 
-    fun addFragment(fragment: Fragment, title: String) {
-        // add each fragment and its title to the array list
-        mFragmentList.add(fragment)
-        mFragmentTitleList.add(title)
-    }
+
 }

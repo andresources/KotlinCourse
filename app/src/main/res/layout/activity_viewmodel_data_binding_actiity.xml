@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
     <data>
+        <!--
+        var dataVM: DataViewModel = Livedata variables(sname,sclass)
+        -->
         <variable
             name="dataVM"
             type="com.kotlincourse.databing.DataViewModel" />

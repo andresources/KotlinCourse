@@ -3,6 +3,7 @@ package com.kotlincourse.tablayout
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.kotlincourse.R
@@ -11,6 +12,8 @@ class TabLayoutActivity : AppCompatActivity() {
     private lateinit var pager: ViewPager // creating object of ViewPager
     private lateinit var tab: TabLayout  // creating object of TabLayout
     private lateinit var bar: Toolbar    // creating object of ToolBar
+    private val mFragmentList = ArrayList<Fragment>()
+    private val mFragmentTitleList = ArrayList<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tab_layout)
@@ -19,13 +22,17 @@ class TabLayoutActivity : AppCompatActivity() {
         tab = findViewById(R.id.tabs)
 
         // Initializing the ViewPagerAdapter
-        val adapter = ViewPagerAdapter(supportFragmentManager)
+
 
         // add fragment to the list
-        adapter.addFragment(CallsFragment(), "Calls")
-        adapter.addFragment(ChatsFragment(), "Chats")
-        adapter.addFragment(UpdatesFragment(), "Updates")
+        mFragmentList.add(CallsFragment())
+        mFragmentList.add(ChatsFragment())
+        mFragmentList.add(UpdatesFragment())
 
+        mFragmentTitleList.add("Calls")
+        mFragmentTitleList.add("Chats")
+        mFragmentTitleList.add("Updates")
+        val adapter = ViewPagerAdapter(supportFragmentManager,mFragmentList,mFragmentTitleList)
         // Adding the Adapter to the ViewPager
         pager.adapter = adapter
 

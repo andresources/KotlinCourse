@@ -18,7 +18,9 @@ class FlowActivity : AppCompatActivity() {
         tvData = findViewById(R.id.tvData)
         lifecycleScope.launch {
             flowData.getData().collect{
-                tvData.setText(it)
+                if(it.toInt() % 2 ==0){ //Filter
+                    tvData.setText(it)
+                }
             }
         }
     }
