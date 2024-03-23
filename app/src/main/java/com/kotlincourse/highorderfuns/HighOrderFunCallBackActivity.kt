@@ -18,7 +18,6 @@ class HighOrderFunCallBackActivity : AppCompatActivity() {
         setContentView(R.layout.activity_high_order_fun_call_back)
         tv = findViewById(R.id.tv)
     }
-
     fun clickMe(view: View?) {
         tv.text = "start computing value..."
         lifecycleScope.launch {

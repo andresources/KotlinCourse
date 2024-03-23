@@ -25,18 +25,19 @@ class TabLayoutActivity : AppCompatActivity() {
 
 
         // add fragment to the list
-        mFragmentList.add(CallsFragment())
-        mFragmentList.add(ChatsFragment())
-        mFragmentList.add(UpdatesFragment())
+        mFragmentList.add(CallsFragment()) //0
+        mFragmentList.add(ChatsFragment())  //1
+        mFragmentList.add(UpdatesFragment()) //2
 
-        mFragmentTitleList.add("Calls")
-        mFragmentTitleList.add("Chats")
-        mFragmentTitleList.add("Updates")
+        mFragmentTitleList.add("Calls") //0
+        mFragmentTitleList.add("Chats") //1
+        mFragmentTitleList.add("Updates") //2
         val adapter = ViewPagerAdapter(supportFragmentManager,mFragmentList,mFragmentTitleList)
         // Adding the Adapter to the ViewPager
         pager.adapter = adapter
-
+        pager.currentItem = 2
         // bind the viewPager with the TabLayout.
         tab.setupWithViewPager(pager)
+
     }
 }

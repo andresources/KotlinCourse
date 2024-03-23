@@ -12,6 +12,7 @@ import com.kotlincourse.R
 
 class RoomActivity : AppCompatActivity() {
     lateinit var tvRecordCount: TextView
+    //rv
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_room)
@@ -20,7 +21,9 @@ class RoomActivity : AppCompatActivity() {
     }
 
     fun submitClicked(view: View) {
-        val newUser = User(username = "abc", email = "abc@example.com")
+        val newUser = User(username = "abcd", email = "abcd@example.com")
+
+
         var database = Room.databaseBuilder(
             applicationContext,
             AppDatabase::class.java,
@@ -28,6 +31,7 @@ class RoomActivity : AppCompatActivity() {
         ).allowMainThreadQueries().build()
 
         database.userDao().insertUser(newUser)
+
         Toast.makeText(applicationContext,"Record inserted successfully.",Toast.LENGTH_SHORT).show()
 
     }
@@ -38,7 +42,10 @@ class RoomActivity : AppCompatActivity() {
             AppDatabase::class.java,
             "my_database"
         ).allowMainThreadQueries().build()
+
         var list:List<User>  = database.userDao().getAllUser()
+       // rv.setData(userAda)
+
         tvRecordCount.setText("Records Size : ${list.size}")
     }
 }

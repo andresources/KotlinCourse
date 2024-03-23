@@ -15,3 +15,4 @@ interface UserDao {
     fun getAllUser() : List<User>
 
 }
+

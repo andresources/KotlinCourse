@@ -13,7 +13,7 @@ class ViewPagerAdapter(supportFragmentManager: FragmentManager,val mFragmentList
 
     override fun getItem(position: Int): Fragment {
         // return a particular fragment page
-        return mFragmentList[position]
+        return mFragmentList[position] // 0 ->CallsFragment()  //1 ChatsFragment() // 3UpdatesFragment()
     }
 
     override fun getCount(): Int {
@@ -21,9 +21,9 @@ class ViewPagerAdapter(supportFragmentManager: FragmentManager,val mFragmentList
         return mFragmentList.size
     }
 
-    override fun getPageTitle(position: Int): CharSequence{
+    override fun getPageTitle(position: Int): CharSequence{ //position -1
         // return title of the tab
-        return mFragmentTitleList[position]
+        return mFragmentTitleList[position] //0 ->Calls //1 ->
     }
 
 

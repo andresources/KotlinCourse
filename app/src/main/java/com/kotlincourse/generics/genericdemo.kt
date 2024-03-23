@@ -1,16 +1,34 @@
 package com.kotlincourse.generics
 
 fun main(){
-    //GDemo().display("Testing")
-    MyClass<String>().display("Hello")
+    /*var emp = Emp("")
+    GDemo<Emp>().display(emp)*/
+    MyOperClass<Int,Float>().calFun(23,54f)
+    // MyOperClass<A,B>
+   //MyClass<String>().display("Hello")
    /* MyClass<String>().display("Hello")
 
-    MyOperClass<Int,Float>().calFun(23,54f)
+
     MyOperClass<String,String>().calFun("Hello","Hai")*/
 }
 
-class MyClass<T>{
+data class Emp(val ename: String)
+
+/*class GDemo{
+    fun display(a:String) {
+        println("$a")
+    }
+
+}*/
+class GDemo<T>{
     fun display(a:T) {
+        println("$a")
+    }
+
+}
+
+class MyClass<T>{
+    fun <T>display(a:T) {
         println("$a")
     }
 }
@@ -22,8 +40,3 @@ class MyOperClass<A,B>{
 }
 
 
-class GDemo{
-    fun display(a:String) {
-        println("$a")
-    }
-}

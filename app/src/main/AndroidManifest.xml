@@ -90,7 +90,6 @@
         <service
             android:name=".services.WorkerThread"
             android:enabled="true" />
-
         <receiver
             android:name=".broadcast.MyBroadcastReceiver"
             android:exported="true">
@@ -98,13 +97,11 @@
                 <action android:name="android.intent.action.AIRPLANE_MODE" />
             </intent-filter>
         </receiver>
-
         <activity
-            android:name=".highorderfuns.HighOrderFunCallBackActivity"
+            android:name=".room.RoomActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
